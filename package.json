@@ -1,0 +1,17 @@
+{
+	"name": "StartLabsSGH",
+	"version": "0.1.0",
+	"dependencies": {
+		"redis": "0.6.x",
+		"jade": "0.x.x",
+		"stylus": "0.x.x",
+		"express-coffee": "0.x.x",
+		"express": "2.x.x",
+		"connect-redis": "1.x.x",
+		"nib": "0.3.x"
+	},
+	"author": "Turner Bohlen <turnerbohlen@gmail.com> (turnerbohlen.com)",
+	"engines": {
+		"node": ">= 0.4.x"
+	}
+}

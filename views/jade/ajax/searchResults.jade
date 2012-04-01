@@ -1,0 +1,8 @@
+- if (ideas.length > 0)
+    - for idea in ideas
+        .span8.well
+            a(href='/ideas/'+idea.id+'/') #{idea.title}
+            br
+            | #{idea.description}
+- else
+    | No ideas were found matching "#{tags}"

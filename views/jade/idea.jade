@@ -1,0 +1,81 @@
+!!! strict
+
+html
+    head
+        title StartLabs SGH | #{title}
+        include includes/head
+        script(type='text/javascript', src="/javascripts/idea.js")
+        include includes/analytics
+
+    body
+        include includes/top
+        .modal.fade#failedLoginModal
+            .modal-header
+                a.close(data-dismiss='modal') x
+                h3 You Joined this Team
+        .modal.fade#failedLoginModal
+            .modal-header
+                a.close(data-dismiss='modal') x
+                h3 You Left this Team
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href='/home/')
+                        | StartLabs SGH
+                    ul.nav
+                        li
+                            a(href='/home/') Home
+                        li
+                            a(href='/ideas/search/') Search
+                        li
+                            a(href='/ideas/new/') Post
+                        li
+                            a(href='/contact/') Contact
+                        li
+                            a(href='/about/') About
+
+        .container
+            .row
+                .span4
+                    .well-light
+                        h1 #{title}
+                        p
+                        - for para in description
+                            p #{para}
+                        p
+                        h4 Creator
+                        | #{creator.name}
+                        h4 Team
+                        - if (team.length > 0)
+                            .members
+                                p.hidden#noMembers
+                                    |No one has joined this team yet.
+                                - for member in team
+                                    p(id=member.id)
+                                        a(href="/account/"+member.id+"/") #{member.name}
+                        - else if (team.length == 0)
+                            .members
+                                p#noMembers No one has joined this team yet.
+                        - if ((!activeUserIsMember) && team.length < maxTeamSize)
+                            button.btn.inverse#joinButton(onclick="window.syJoinTeam()") Join Team
+                            button.hidden.btn.inverse#leaveButton(onclick="window.syLeaveTeam()") Leave Team
+                        - else if (activeUserIsMember)
+                            button.hidden.btn.inverse#joinButton(onclick="window.syJoinTeam()") Join Team
+                            button.btn.inverse#leaveButton(onclick="window.syLeaveTeam()") Leave Team
+                .span8
+                    .well-light
+                        h1 Comments
+                        - for comment in comments
+                            .comment.well
+                                h3 #{comment.title}
+                                p
+                                - for comPara in comment.message
+                                    p #{comPara}
+                                | - #{comment.creator.name}
+                        form.form-vertical.well#newcommentform
+                            .control-group
+                                input.span7#commentTitle(name="commentTitle", placeholder="Comment Title")
+                            .control-group
+                                textarea.span7#commentBody(rows='4', resize="none", name="newcomment", placeholder="Comment", required='true')
+                            .control-group
+                                input.btn.btn-primary#newcommentbutton(type='button', value="Share")

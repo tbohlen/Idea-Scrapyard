@@ -1,0 +1,44 @@
+!!! strict
+
+html(lang="en", xmlns="http://www.w3.org/1999/xhtml", xmlns:fb="http://ogp.me/ns/fb#")
+    head
+        title StartLabs SGH
+        include includes/head
+        include includes/analytics
+
+    body
+        include includes/top
+        script(type='text/javascript', src="/javascripts/landing.js")
+        .container
+            .modal.fade#failedLoginModal
+                .modal-header
+                    a.close(data-dismiss='modal') x
+                    h3 Login failed
+                .modal-body
+                    p Sorry, the login failed.
+            .modal.fade#passwordModal
+                .modal-header
+                    h3 Login Succeeded!
+                .modal-body
+                    p Type the password sent to you after you signed up via eventbrite:
+                    .control-group#passwordGroup
+                        input#password(type='password', name='password', placeholder='password', required='true')
+                        span.hidden.help-inline#badPassword Incorrect Password
+                    button.btn.btn-primary(onclick='window.sySubmitPassword()') Sign In
+                    p.help-block
+                        | Haven't Registered?
+                        a(href="http://startlabsSGH.eventbrite.com") Click Here!
+            .row
+                .span12
+                    .hero-unit
+                        h1 StartLabs Social Good Hackathon
+                        p
+                        //- p This site is under construction. Check back shortly to start sharing ideas and forming teams for the upcoming event!
+                        p
+                            | Welcome to the StartLabs SGH website! After you have 
+                            a(href="http://startlabsSGH.eventbrite.com") registered
+                            |  for the hackathon you can come back here to share your ideas with other developers and build a team.
+                        p Get started:
+                        p
+                            a.btn.btn-large.btn-primary(onclick='window.syLogin()')
+                                | Login With Facebook

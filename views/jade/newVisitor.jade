@@ -1,0 +1,56 @@
+!!! strict
+// sticky footer thanks to http://ryanfait.com/
+html
+    head
+        title StartLabs SGH | About
+        include includes/head
+        include includes/analytics
+
+    body
+        include includes/top
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href='/home/')
+                        | StartLabs SGH
+                    ul.nav
+                        li
+                            a(href='/home/') Home
+                        li
+                            a(href='/ideas/search/') Search
+                        li
+                            a(href='/ideas/new/') Post
+                        li
+                            a(href='/contact/') Contact
+                        li.active
+                            a(href='/about/') About
+
+        .container
+            .row
+                .span8
+                    .well
+                        p(style="font-size:18px;line-height:24px;") This site will be your platform for sharing ideas and creating teams prior to the hackathon. Feel free to post any idea you have, whether you plan on building it or leaving it for the other developers.
+                        p(style="font-size:18px;line-height:24px;") Please select your team before 
+                            b April 21st
+                            | . Teams are capped at 
+                            b 4 members
+                            | .
+                .span4
+                    h2 Suggested Projects
+                    a(href="/suggested-projects/mozillaWatchdog/") Mozilla Watchdog
+                    |  - Browser-based privacy management
+                    a(href="/suggested-projects/mozillaPersona/") Mozilla Persona
+                    |  - Login with just an email address
+            .row
+                .span12(style="position:absolute;bottom:0px;")
+                    .sponsorWrap
+                        a.sponsorLink(href="http://www.mozilla.org")
+                            img.sponsorImage(src="/images/mozilla.jpg", alt="Mozilla Foundation")
+                        a.sponsorLink(href="http://www.fundraise.com") fundraise.com
+                        //-img.sponsorImage(src="/images/fundraise.jpg", alt="fundraise.com")
+                        a.sponsorLink(href="http://www.redstar.com") RedStar Ventures
+                        //- img.sponsorImage(src="/images/redstar.jpg", alt="RedStar Ventures")
+                        a.sponsorLink(href="http://www.github.com") Github
+                        //- img.sponsorImage(src="/images/github.jpg", alt="github")
+                        a.sponsorLink(href="http://www.altruhelp.com")
+                            img.sponsorImage(src="/images/altruhelp.jpg", alt="AltrUHelp")

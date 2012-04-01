@@ -1,0 +1,44 @@
+!!! strict
+
+html(lang="en")
+    head
+        title StartLabs SGH | New Idea
+        include includes/head
+        script(type='text/javascript', src="/javascripts/createIdeaScript.js")
+        include includes/analytics
+
+    body
+        include includes/top
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href='/home/')
+                        | StartLabs SGH
+                    ul.nav
+                        li
+                            a(href='/home/') Home
+                        li
+                            a(href='/ideas/search/') Search
+                        li.active
+                            a(href='/ideas/new/') Post
+                        li
+                            a(href='/contact/') Contact
+                        li
+                            a(href='/about/') About
+
+        .container
+            .row
+                .span12
+                    h1
+                        | Post an idea
+                    form.form-vertical.well
+                        .control-group#titleGroup
+                            input.span4#titleInput(type="text", name='title', required='true', placeholder='idea name')
+                            span.help-inline.hidden#titleHelp Include a title
+                        .control-group#descGroup
+                            textarea.span4#descInput(rows='4', name="description", required="true", placeholder="description")
+                            span.help-inline.hidden#descHelp Include a description
+                        .control-group#tagGroup
+                            input.span4#tagInput(onKeyPress="return window.syCheckIdeaSubmit(event)", type='text', name='tags', required="true", placeholder='tags (space separated)')
+                            span.help-inline.hidden#tagHelp Include a couple tags
+                        input.btn.btn-primary#createideabutton(type='button', value='Create')

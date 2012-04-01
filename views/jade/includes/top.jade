@@ -1,0 +1,31 @@
+#fb-root
+include browserDetect
+script
+    window.fbAsyncInit = function() {
+        var fbData = {
+                appId      : '297571286921706', // App ID
+                status     : true, // check login status
+                cookie     : true, // enable cookies to allow the server to access the session
+                xfbml      : true  // parse XFBML
+            };
+        if (BrowserDetect.browser != "Explorer") {
+            fbData["channelUrl"] = '//badideas-tbohlen.dotcloud.COM/public_html/channel.html';
+        }
+        FB.init(fbData);
+        
+        FB.Event.subscribe('auth.logout', window.syLogoutCallback);
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+.modal.fade#errorModal
+    .modal-header
+        a.close(data-dismiss='modal') x
+        h3 Oops...
+    .modal-body
+        p We encountered an error. Refresh the page and try again.

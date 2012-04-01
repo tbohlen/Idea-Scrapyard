@@ -1,0 +1,48 @@
+!!! strict
+
+html(lang="en", xmlns="http://www.w3.org/1999/xhtml", xmlns:fb="http://ogp.me/ns/fb#")
+    head
+        title StartLabs SGH | #{userInfo.name}'s Info
+        include includes/head
+        //- Date: 2011-11-7
+        include includes/analytics
+
+    body
+        include includes/top
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href='/home/')
+                        | StartLabs SGH
+                    ul.nav
+                        li
+                            a(href='/home/') Home
+                        li
+                            a(href='/ideas/search/') Search
+                        li
+                            a(href='/ideas/new/') Post
+                        li
+                            a(href='/contact/') Contact
+                        li
+                            a(href='/about/') About
+        .container
+            .row
+                .span12.well
+                    h1 #{userInfo.name}'s Info
+                    //- - if (userInfo.shareEmail == true || userInfo.shareEmail == "true" || userInfo.shareEmail == 1)
+                    //-     h4 Email
+                    //-     | #{userInfo.email}
+                    h4 Team
+                    -if (userInfo.team)
+                        a(href='/ideas/'+userInfo.team.id+'/') #{userInfo.team.title}
+                    -else
+                        | none
+                    h4 Facebook
+                    a(href=userInfo.link) #{userInfo.link}
+                    h4 Shared Ideas
+                    -if (userInfo.ideas.length > 0)
+                        -for idea in userInfo.ideas
+                            a(href='/ideas/'+idea.id+'/') #{idea.title}
+                            br
+                    -else
+                        | You have not posted any ideas yet.

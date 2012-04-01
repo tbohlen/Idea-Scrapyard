@@ -1,0 +1,21 @@
+!!! strict
+
+html(lang="en", xmlns="http://www.w3.org/1999/xhtml", xmlns:fb="http://ogp.me/ns/fb#")
+	head
+		title StartLabs SGH | Error
+		include includes/head
+		script(type='text/javascript', src="/javascripts/syStandard.js")
+		include includes/analytics
+
+	body
+		include includes/top
+		.container
+			.row
+				.span12
+					.hero-unit
+						h1 Oops....
+						p It looks like we've encountered an error.
+						a.btn.btn-large.btn-primary(href="/home/") Try Returning Home
+						- if (error.length)
+							h5 Details:
+							p #{error}

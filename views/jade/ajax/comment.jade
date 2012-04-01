@@ -1,0 +1,6 @@
+.comment.well
+    h3 #{comment.title}
+    p
+    - for comPara in comment.message
+        p #{comPara}
+    | - #{comment.creator.name}

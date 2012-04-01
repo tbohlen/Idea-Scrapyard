@@ -1,0 +1,394 @@
+@import 'bootstrap'
+
+body
+    padding-top: 100px;
+
+h1
+    margin-bottom $gridGutterWidth
+// helpful class that starts something out hidden
+.hidden
+    display: none;
+    
+.comment
+    margin-bottom $gridGutterWidth
+    margin-top $gridGutterWidth
+
+.sponsorImage
+    display inline-block
+.sponsorLink
+    display inline-block
+    width 150px
+    height 50px
+    margin-left 12px
+    margin-right 12px
+    font-size 20px
+    text-align center
+.sponsorWrap
+    margin-left auto
+    margin-right auto
+    width 870px
+
+/*darkColor = #44444d
+lightColor = #EAEAEA
+lightHighlight = #D1C39f
+darkHighlight = #8E552C
+orangeColor = #EB501B
+brightOrangeColor = #FF7700
+
+border-radius()
+    -webkit-border-radius arguments
+    -moz-border-radius arguments
+    border-radius arguments
+    
+box-shadow()
+    -webkit-box-shadow arguments
+    -mox-box-shadow arguments
+    box-shadow arguments
+
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
+    background-color startColor
+    if deprecatedWebkitStartPoint && deprecatedWebkitEndPoint
+        background-image -webkit-gradient(linear, deprecatedWebkitStartPoint, deprecatedWebkitEndPoint, color-stop(startInterval, startColor), color-stop(endInterval, endColor))
+    background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+body
+    font-family "lucida grande", "lucida-grande", "helvetica", "sans-serif"
+    background-color lightColor
+    color darkColor
+    font-size 12pt
+    margin 0px
+    border 0px
+    min-width 1040px
+    padding-top 40px
+
+#bg
+    position absolute
+    z-index -1
+    top 0
+    left 0
+    right 0
+    bottom 0
+    width 310px
+    
+
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// helpers ///////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+.large
+    font-size 14pt
+    font-weight bold
+.larger
+    font-size 18pt
+.highlighted
+    color orangeColor
+    font-weight bold
+    display inline-block
+.gold
+    color darkHighlight
+    display inline-block
+    
+
+/////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// link styling ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+a
+    text-decoration none
+
+a.link
+    text-decoration none
+    color orangeColor
+    
+a.active
+    text-decoration underline
+    // color brightOrangeColor
+        
+// DB471B
+// 8A2D11
+/////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// form styling ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+.formfield
+    background-color inherit
+.idlefield
+    color lightHighlight
+.focusfield
+    color inherit
+        
+#tagsearchform
+    display block
+    marin none
+    
+#ideapastform
+    display block
+    margin none 
+    
+#hometagsearchform
+    display block
+    margin 0%
+    float left
+    margin-top 146px
+
+#homeideapostform
+    display block
+    margin-right 66px
+    float left
+    
+    
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// input styling //////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+input[type="button"]
+    display block
+    width 160px
+    height 40px
+    background-color darkHighlight
+    color lightColor
+    font-size 16pt
+    border 0px
+    margin-top 6px
+    cursor pointer
+        
+input[type="button"]:hover
+    background-color orangeColor //#85471D
+    
+input[type="button"]:focus
+    outline none
+    background-color orangeColor //#85471D
+    
+input[type="text"]
+    display block
+    border none
+    border-left 1px solid darkHighlight
+    border-bottom 1px solid darkHighlight
+    background-color inherit
+    width 290px
+    margin 6px 0px 0px 0px
+    font-size 12pt
+
+input[type= "text"]:focus
+    outline none
+    
+textarea
+    display block
+    border none
+    border-left 1px solid darkHighlight
+    border-bottom 1px solid darkHighlight
+    background-color inherit
+    width 290px
+    margin 6px 0px 0px 0px
+    resize none
+    font-size 12pt
+    
+textarea:focus
+    outline none
+
+
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////// doublecolumn styling /////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+.doublecolumn input[type="text"]
+    display block
+    border none
+    border-left 1px solid darkHighlight
+    border-bottom 1px solid darkHighlight
+    background-color inherit
+    width 450px
+    margin 6px 0px 0px 0px
+    font-size 12pt
+    
+.doublecolumn textarea
+    display block
+    border none
+    border-left 1px solid darkHighlight
+    border-bottom 1px solid darkHighlight
+    background-color inherit
+    width 450px
+    margin 6px 0px 0px 0px
+    resize none
+    font-size 12pt
+
+.doublecolumn .text
+    display block
+    margin-left 56px
+    
+
+/////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Navigation /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+#navwrap
+    float right
+    width 670px
+    margin 0px 0px 0px 0px
+
+.navlink
+    float right
+    cursor pointer
+    text-decoration none
+    font-weight bold
+    color darkHighlight
+    display inline-block
+    margin 0px 20px 0px 20px
+    padding 0px 0px 0px 0px
+    
+.activenavlink
+    text-decoration underline
+    
+.fblink
+    float right
+    color #4869D8
+    display inline-block
+    margin 0px 20px 0px 20px
+    text-decoration none
+    font-weight bold
+    cursor pointer
+    
+.activefblink
+    text-decoration underline
+    // color #5680FF
+    
+    
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////// account area and facebook /////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+#fb-root
+    position absolute
+    top 0px
+    left 0px
+    height 0px
+    width 0px
+
+    
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////// search results ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+    
+.resultwrap
+    margin 0px
+    padding 0px 0px
+
+
+/////////////////////////////////////////////////////////////////////////////
+//////////////////////////// standard content ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+.header
+    position relative
+    left 0px
+    right 0px
+    top 0px
+    height 225px
+    width 100%
+    min-width 1020px
+    margin auto
+    margin-bottom 10px
+    margin-top 0px
+    padding 0px
+
+.topbar
+    display block
+    height 56px
+    width 100%
+    margin auto
+    padding-top 56px
+    
+.main
+    margin auto
+    overflow auto
+    width 1020px
+    
+.column
+    float left
+    margin 0px 20px 0px 20px
+    width 300px
+    overflow hidden
+    
+.doublecolumn
+    float left
+    margin 0px 20px 0px 20px
+    width 620px
+    overflow hidden
+    
+.spacer
+    width 100%
+    height 225px
+    margin 0px
+    padding 0px
+    font-size 21pt
+    
+.text
+    display block
+        
+.title
+    font-size 37pt
+    color darkHighlight
+    display inline-block
+    margin 0px 0px 20px 0px
+    
+.creator
+    font-size 12pt
+    color darkColor
+    display block
+    margin-top 20px
+    margin-left: 50%
+    
+    
+/////////////////////////////////////////////////////////////////////////////
+//////////////////////////// homebutton style ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+    
+.homebutton
+    display block
+    overflow auto
+    font-size 50pt
+    color orangeColor
+    cursor pointer
+    margin none
+    padding 0px
+    
+.activehomebutton
+    text-decoration underline
+
+
+/////////////////////////////////////////////////////////////////////////////
+//////////////////////////// homebutton style ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+// .description
+//  float left
+// 
+// .buttonswrap
+//  float right
+    
+// #downvoteButton
+//  nothing
+// #upvoteButton
+//  nothing
+// .voteButton
+//  display block
+    
+.comment
+    display block
+    border-top 1px solid darkColor
+    margin 75px 0px 0px 0px
+    padding 56px 0px 0px 56px
+*/

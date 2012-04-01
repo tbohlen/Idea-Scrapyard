@@ -1,0 +1,4 @@
+node:
+    type: nodejs
+data:
+    type: redis

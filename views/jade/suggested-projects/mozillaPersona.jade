@@ -1,0 +1,36 @@
+!!! strict
+
+html(lang="en", xmlns="http://www.w3.org/1999/xhtml", xmlns:fb="http://ogp.me/ns/fb#")
+    head
+        title StartLabs SGH | Mozilla Persona
+        include ../includes/head
+        //- Date: 2011-11-7
+        include ../includes/analytics
+
+    body
+        include ../includes/top
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href='/home/')
+                        | StartLabs SGH
+                    ul.nav
+                        li
+                            a(href='/home/') Home
+                        li
+                            a(href='/ideas/search/') Search
+                        li
+                            a(href='/ideas/new/') Post
+                        li
+                            a(href='/contact/') Contact
+                        li
+                            a(href='/about/') About
+        .container
+            .row
+                .span12.well
+                    h1 Mozilla Persona
+                    h4 Description
+                    p Make it easier for people to adopt Mozilla Persona for authentication by building a plug-in for your favorite wiki, blog, forum, or CMS software. Plus, if you choose MediaWiki, we might even deploy your project on 
+                        a(href="http://wiki.mozilla.org") wiki.mozilla.org!
+                    h4 More Information
+                    a(href="https://www.mozilla.org/en-US/persona/") The Persona Project

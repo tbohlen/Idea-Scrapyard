@@ -1,0 +1,39 @@
+!!! strict
+
+html(lang="en")
+    head
+        title StartLabs SGH | Search
+        include includes/head
+        script(type='text/javascript', src='/javascripts/searchScript.js')
+        include includes/analytics
+
+    body
+        include includes/top
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href='/home/')
+                        | StartLabs SGH
+                    ul.nav
+                        li
+                            a(href='/home/') Home
+                        li.active
+                            a(href='/ideas/search/') Search
+                        li
+                            a(href='/ideas/new/') Post
+                        li
+                            a(href='/contact/') Contact
+                        li
+                            a(href='/about/') About
+                            
+        .container
+            .row
+                .span4
+                    h1
+                        | Search Ideas
+                    form.form-vertical.well#searchform
+                        .control-group#searchGroup
+                            input#searchInput(onKeyPress="return window.syCheckSearchSubmit(event)", type="text", name="tags", required="true", placeholder="search by keyword")
+                            span.help-inline.hidden#searchHelp Input a tag or two separated by spaces
+                        input.btn.btn-primary#searchButton(type='button', value='Search')
+                .span8.resultwrap
