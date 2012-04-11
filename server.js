@@ -168,11 +168,13 @@ TODO: Do not attach all the idea information to the accountdata
     var accountData, allUserDataCallback;
     accountData = req.session.userInfo;
     if (!checkAuthorized(accountData)) {
+      logger.log(req, "User is not authorized. Redirecting to landing page.");
       return res.redirect("/landing/");
     } else {
       allUserDataCallback = function(userError, userResult) {
         var recentIdeasCallback;
         if ((userError != null) || (!(userResult != null))) {
+          logger.log(req, "GET /home/ ERROR: No data recieved about user.");
           return next(userError);
         } else {
           recentIdeasCallback = function(ideasError, ideasResult) {
@@ -432,6 +434,7 @@ TODO: Do not attach all the idea information to the accountdata
   };
 
   checkAuthorized = function(accountData) {
+    logger.log(null, "checking authorization of " + JSON.stringify(accountData));
     if (accountData != null) {
       if (accountData.signedIn === "signedIn" || accountData.signedIn === 1 || accountData.signedIn === "true") {
         return true;
@@ -479,7 +482,7 @@ TODO: Do not attach all the idea information to the accountdata
               response.error = userError;
               response.result = false;
               return res.sent(response);
-            } else if (!userResponse.signedIn) {
+            } else if (!checkAuthorized(userResponse)) {
               logger.log(req, "User is not signed on: " + userInfo.id.toString());
               req.session.userInfo = userResponse;
               response.error = null;

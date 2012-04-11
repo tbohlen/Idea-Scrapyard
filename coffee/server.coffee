@@ -111,11 +111,13 @@ app.get "/home/?", (req, res, next) ->
     accountData = req.session.userInfo
     
     if not checkAuthorized(accountData)
+        logger.log(req, "User is not authorized. Redirecting to landing page.")
         res.redirect("/landing/")
     else
         
         allUserDataCallback = (userError, userResult) ->
             if userError? or (not userResult?)
+                logger.log(req, "GET /home/ ERROR: No data recieved about user.")
                 next userError
             else
             
@@ -330,6 +332,7 @@ checkNewUserInformation = (userInfo) ->
         return true
         
 checkAuthorized = (accountData) ->
+    logger.log(null, "checking authorization of " + JSON.stringify(accountData))
     if accountData?
         if accountData.signedIn == "signedIn" or accountData.signedIn == 1 or accountData.signedIn == "true"
             return true
@@ -372,7 +375,7 @@ app.post '/account/recognize/?', (req, res, next) ->
                         response.error = userError
                         response.result = false
                         res.sent response
-                    else if (not userResponse.signedIn)
+                    else if not checkAuthorized(userResponse)
                         logger.log(req, "User is not signed on: " + userInfo.id.toString())
                         req.session.userInfo = userResponse
                         response.error = null
